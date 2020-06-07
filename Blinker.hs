@@ -9,9 +9,9 @@ import Clash.Prelude
 import Clash.Annotations.TH
 import Control.Monad.State
 import Data.Tuple
+import IceRgbDriver (iceRgbDriver, Rgb)
 
 type Byte = BitVector 8
-type Rgb = ("red" ::: Bit, "green" ::: Bit, "blue" ::: Bit)
 
 data Color = Red | Green | Blue
   deriving (NFDataX, Generic, Enum)
