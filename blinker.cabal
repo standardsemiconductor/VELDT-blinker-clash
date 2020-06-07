@@ -20,4 +20,3 @@ library
         default-extensions: NoImplicitPrelude
         default-language: Haskell2010
         ghc-options: -Wall -fexpose-all-unfoldings -fno-worker-wrapper
-        cpp-options: -DCABAL
