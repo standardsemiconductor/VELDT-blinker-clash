@@ -22,4 +22,7 @@ cabal.project.local~
 .HTF/
 .ghc.environment.*
 *~
+Blinker.asc
+Blinker.bin
+Blinker.json
 /verilog
