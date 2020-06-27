@@ -14,7 +14,7 @@ $(TOP).json: $(TOP).hs
 	yosys -q -p "synth_ice40 -top $(TOP) -json $@ -dsp -abc2" verilog/$(TOP)/$(TOP)/*.v
 
 prog: $(TOP).bin
-	mane $<
+	iceprog $<
 
 build: $(TOP).hs
 	cabal build $<
