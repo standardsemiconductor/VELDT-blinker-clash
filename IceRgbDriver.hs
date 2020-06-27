@@ -1,6 +1,6 @@
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE DataKinds #-}
-{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE DataKinds     #-}
+{-# LANGUAGE QuasiQuotes   #-}
 module IceRgbDriver (Rgb, iceRgbDriver) where
 
 import Clash.Prelude
@@ -24,9 +24,9 @@ import Data.String.Interpolate.Util (unindent)
   -> Signal dom (Bit, Bit, Bit)"
       , "template" :
   "//SB_RGBA_DRV begin
-  wire ~GENSYM[BLUE][2];
-  wire ~GENSYM[GREEN][1];
   wire ~GENSYM[RED][0];
+  wire ~GENSYM[GREEN][1];
+  wire ~GENSYM[BLUE][2];
 
   SB_RGBA_DRV #(
      .CURRENT_MODE(~ARG[0]),
@@ -36,12 +36,12 @@ import Data.String.Interpolate.Util (unindent)
   ) RGBA_DRIVER (
      .CURREN(1'b1),
      .RGBLEDEN(1'b1),
-     .RGB0PWM(~ARG[6]),
+     .RGB0PWM(~ARG[4]),
      .RGB1PWM(~ARG[5]),
-     .RGB2PWM(~ARG[4]),
-     .RGB0(~SYM[2]),
+     .RGB2PWM(~ARG[6]),
+     .RGB0(~SYM[0]),
      .RGB1(~SYM[1]),
-     .RGB2(~SYM[0])
+     .RGB2(~SYM[2])
   );
  
   assign ~RESULT = {~SYM[0], ~SYM[1], ~SYM[2]};
