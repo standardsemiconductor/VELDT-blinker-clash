@@ -13,6 +13,7 @@ library
         exposed-modules: Blinker
         other-modules: IceRgbDriver
         build-depends: clash-prelude
+                     , clash-ghc
                      , mtl
                      , base
                      , filepath
