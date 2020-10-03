@@ -1,15 +1,10 @@
-{-# LANGUAGE DeriveGeneric   #-}
-{-# LANGUAGE DeriveAnyClass  #-}
-{-# LANGUAGE TemplateHaskell #-}
-{-# LANGUAGE TypeOperators   #-}
-{-# LANGUAGE DataKinds       #-}
 module Blinker where
 
 import Clash.Prelude
 import Clash.Annotations.TH
 import Control.Monad.State
 import Data.Tuple
-import IceRgbDriver (iceRgbDriver, Rgb)
+import Rgb (rgb, Rgb)
 
 type Byte = BitVector 8
 
@@ -53,7 +48,7 @@ blinkerMealy = mealy (runBlinker blinker) blinkerInit $ pure ()
 topEntity
   :: "clk" ::: Clock XilinxSystem
   -> "led" ::: Signal XilinxSystem Rgb
-topEntity clk = iceRgbDriver $ withClockResetEnable clk rst enableGen blinkerMealy
+topEntity clk = rgb $ withClockResetEnable clk rst enableGen blinkerMealy
   where
     rst = unsafeFromHighPolarity $ pure False
 makeTopEntityWithName 'topEntity "Blinker"    

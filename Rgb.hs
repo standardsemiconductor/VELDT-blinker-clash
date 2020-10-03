@@ -1,19 +1,19 @@
-{-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE DataKinds     #-}
-{-# LANGUAGE QuasiQuotes   #-}
-module IceRgbDriver (Rgb, iceRgbDriver) where
+module Rgb
+  ( Rgb
+  , rgb
+  ) where
 
 import Clash.Prelude
 import Clash.Annotations.Primitive
 import Data.String.Interpolate (i)
 import Data.String.Interpolate.Util (unindent)
 
-{-# ANN iceRgbDriverPrim (InlinePrimitive [Verilog] $ unindent [i|
+{-# ANN rgbPrim (InlinePrimitive [Verilog] $ unindent [i|
   [ { "BlackBox" :
-      { "name" : "IceRgbDriver.iceRgbDriverPrim"
+      { "name" : "Rgb.rgbPrim"
       , "kind" : "Declaration"
       , "type" :
-  "iceRgbDriverPrim
+  "rgbPrim
   :: String         -- current_mode ARG[0]
   -> String         -- rgb0_current ARG[1]
   -> String         -- rgb1_current ARG[2]
@@ -51,8 +51,8 @@ import Data.String.Interpolate.Util (unindent)
   ]
   |]) #-}
 
-{-# NOINLINE iceRgbDriverPrim #-}
-iceRgbDriverPrim
+{-# NOINLINE rgbPrim #-}
+rgbPrim
   :: String
   -> String
   -> String
@@ -61,10 +61,10 @@ iceRgbDriverPrim
   -> Signal dom Bit
   -> Signal dom Bit
   -> Signal dom (Bit, Bit, Bit)
-iceRgbDriverPrim _ _ _ _ _ _ _ = pure (0, 0, 0)
+rgbPrim _ _ _ _ _ _ _ = pure (0, 0, 0)
 
 type Rgb = ("red" ::: Bit, "green" ::: Bit, "blue" ::: Bit)
 
-iceRgbDriver :: Signal dom Rgb -> Signal dom Rgb
-iceRgbDriver rgb = let (r, g, b) = unbundle rgb
-                    in iceRgbDriverPrim "0b0" "0b111111" "0b111111" "0b111111" r g b
+rgb :: Signal dom Rgb -> Signal dom Rgb
+rgb rgbS = let (r, g, b) = unbundle rgbS
+           in rgbPrim "0b0" "0b111111" "0b111111" "0b111111" r g b

@@ -11,13 +11,19 @@ extra-source-files:  CHANGELOG.md, README.md
 
 library
         exposed-modules: Blinker
-        other-modules: IceRgbDriver
+        other-modules: Rgb
         build-depends: clash-prelude
                      , clash-ghc
                      , mtl
                      , base
                      , filepath
                      , interpolate
-        default-extensions: NoImplicitPrelude
+        default-extensions: NoImplicitPrelude,
+                            DeriveGeneric,
+                            DeriveAnyClass,
+                            TemplateHaskell,
+                            TypeOperators,
+                            DataKinds,
+                            QuasiQuotes
         default-language: Haskell2010
         ghc-options: -Wall -fexpose-all-unfoldings -fno-worker-wrapper
