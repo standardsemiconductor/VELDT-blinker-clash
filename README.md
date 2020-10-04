@@ -13,7 +13,7 @@ VELDT blinker example with Clash
    foo@bar:~$ cd VELDT-blinker-clash
    ```
 ## Usage
-Plug in VELDT to computer USB port, make sure switches are set to ON and FLASH. Verify PWR LED illuminated red.
+Plug VELDT into computer USB port, make sure switches are set to ON and FLASH. Verify PWR LED illuminated red.
 ```console
 foo@bar:~/VELDT-blinker-clash$ make prog
 ```
