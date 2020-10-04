@@ -1,6 +1,9 @@
 # VELDT-blinker-clash
 VELDT blinker example with Clash
 
+## Demo
+![](blinker.gif)
+
 ## Prerequisites
 1. Install & Setup [Clash](https://github.com/standardsemiconductor/VELDT-info#clash)
 2. Install & Setup [Project IceStorm](https://github.com/standardsemiconductor/VELDT-info#project-icestorm)
@@ -15,5 +18,3 @@ Plug in VELDT to computer USB port, make sure switches are set to ON and FLASH. 
 foo@bar:~/VELDT-blinker-clash$ make prog
 ```
 
-## Demo
-![](blinker.gif)
