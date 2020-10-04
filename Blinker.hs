@@ -26,7 +26,7 @@ blinker :: State Blinker Rgb
 blinker = do
   Blinker c (pwmRed, pwmGreen, pwmBlue) t <- get
   let (drvRed, drvGreen, drvBlue) = drive c
-      done = t == 48000000 -- 4 seconds
+      done = t == 24000000 -- 2 seconds
       t' = if done
         then 0
         else t + 1
