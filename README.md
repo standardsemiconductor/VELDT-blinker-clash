@@ -14,3 +14,6 @@ Plug in VELDT to computer USB port, make sure switches are set to ON and FLASH. 
 ```console
 foo@bar:~/VELDT-blinker-clash$ make prog
 ```
+
+## Demo
+![](blinker.gif)
