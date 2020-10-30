@@ -20,7 +20,7 @@ foo@bar:~/VELDT-blinker-clash$ make prog
 ## Info
 VELDT avaliable now on [Amazon](https://www.amazon.com/dp/B08F9T8DFT?ref=myi_title_dp)!
 
-More information about the board can be found in the [VELDT-info](https://github.com/standardsemiconductor/VELDT-info) repo
+More information about the board can be found in the [VELDT-info](https://github.com/standardsemiconductor/VELDT-info#veldt-info) repo
 
 Visit the [website](https://www.standardsemiconductor.com/)
 
