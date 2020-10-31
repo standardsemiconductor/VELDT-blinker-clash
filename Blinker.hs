@@ -11,7 +11,7 @@ type Byte = BitVector 8
 data Color = Red | Green | Blue
   deriving (NFDataX, Generic, Enum)
 
-data Blinker = Blinker Color (Byte, Byte, Byte) (Unsigned 26)
+data Blinker = Blinker Color (Byte, Byte, Byte) (Index 24000000)
   deriving (NFDataX, Generic)
 
 drive :: Color -> (Byte, Byte, Byte)
@@ -26,7 +26,7 @@ blinker :: State Blinker Rgb
 blinker = do
   Blinker c (pwmRed, pwmGreen, pwmBlue) t <- get
   let (drvRed, drvGreen, drvBlue) = drive c
-      done = t == 24000000 -- 2 seconds
+      done = t == maxBound -- 2 seconds
       t' = if done
         then 0
         else t + 1
