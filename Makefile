@@ -8,15 +8,15 @@ $(TOP).bin: $(TOP).asc
 $(TOP).asc: $(TOP).json $(TOP).pcf 
 	nextpnr-ice40 --up5k --package sg48 --pcf $(TOP).pcf --asc $@ --json $<
 
-$(TOP).json: $(TOP).hs
+$(TOP).json: src/$(TOP).hs
 	cabal build $<
-	cabal exec -- clash --verilog $<
+	cabal run clash --write-ghc-environment-files=always -- $(TOP) --verilog
 	yosys -q -p "synth_ice40 -top $(TOP) -json $@ -abc2" verilog/$(TOP)/$(TOP)/*.v
 
 prog: $(TOP).bin
 	iceprog $<
 
-build: $(TOP).hs
+build: src/$(TOP).hs
 	cabal build $<
 
 clean:
@@ -24,7 +24,7 @@ clean:
 	rm -f $(TOP).json
 	rm -f $(TOP).asc
 	rm -f $(TOP).bin
-	rm -f *~
+	find . -type f -name '*~' -delete
 	rm -f *.hi
 	rm -f *.o
 
