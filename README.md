@@ -1,3 +1,4 @@
+![Haskell CI](https://github.com/standardsemiconductor/VELDT-blinker-clash/workflows/Haskell%20CI/badge.svg)
 # VELDT-blinker-clash
 VELDT blinker example with Clash
 
