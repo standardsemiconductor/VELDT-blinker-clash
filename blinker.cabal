@@ -67,7 +67,7 @@ common common-options
     interpolate,
     
     -- clash-prelude will set suitable version bounds for the plugins
-    clash-prelude >= 1.2.2 && < 1.4,
+    clash-prelude >= 1.2.5 && < 1.4,
     ghc-typelits-natnormalise,
     ghc-typelits-extra,
     ghc-typelits-knownnat
@@ -83,12 +83,14 @@ library
 executable clash
            main-is: bin/Clash.hs
            Build-Depends: base, clash-ghc, blinker
+           default-language: Haskell2010
            if !os(Windows)
               ghc-options: -dynamic        
 
 -- Builds the executable 'clashi', with blinker in scope              
 executable clashi
            main-is: bin/Clashi.hs
+           default-language: Haskell2010
            if !os(Windows)
              ghc-options: -dynamic
            build-depends: base, clash-ghc, blinker
