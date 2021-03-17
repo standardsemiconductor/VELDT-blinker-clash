@@ -1,6 +1,8 @@
 packages:
   blinker.cabal
 
+write-ghc-environment-files: always
+
 package clash-prelude
   -- 'large-tuples' generates tuple instances for various classes up to the
   -- GHC imposed maximum of 62 elements. This severely slows down compiling

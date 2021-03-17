@@ -4,9 +4,11 @@ import Clash.Prelude
 import Clash.Annotations.TH
 import Control.Monad.State
 import Data.Tuple
-import Rgb (rgb, Rgb)
+import Ice40.Clock ( Lattice12Mhz, latticeRst )
+import Ice40.Rgb   ( rgbPrim )
 
 type Byte = BitVector 8
+type Rgb = ("red" ::: Bit, "green" ::: Bit, "blue" ::: Bit)
 
 data Color = Red | Green | Blue
   deriving (NFDataX, Generic, Enum)
@@ -44,11 +46,14 @@ blinkerMealy = mealy (runBlinker blinker) blinkerInit $ pure ()
     runBlinker m s _ = swap $ runState m s
     blinkerInit = Blinker Red (0, 0, 0) 0
 
+-- RGB driver primtive wrapper
+rgb :: Signal dom Rgb -> Signal dom Rgb
+rgb input = let (r, g, b) = unbundle input
+            in rgbPrim "0b0" "0b111111" "0b111111" "0b111111" 1 1 r g b
+
 {-# NOINLINE topEntity #-}
 topEntity
-  :: "clk" ::: Clock XilinxSystem
-  -> "led" ::: Signal XilinxSystem Rgb
-topEntity clk = rgb $ withClockResetEnable clk rst enableGen blinkerMealy
-  where
-    rst = unsafeFromHighPolarity $ pure False
+  :: "clk" ::: Clock Lattice12Mhz
+  -> "led" ::: Signal Lattice12Mhz Rgb
+topEntity clk = rgb $ withClockResetEnable clk latticeRst enableGen blinkerMealy
 makeTopEntityWithName 'topEntity "Blinker"    
