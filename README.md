@@ -28,7 +28,7 @@ Other commands:
 * `cabal run blinker -- clean` to clean the build directory `_build`
 * `cabal run clashi` to start an interactive Clash repl
 
-[`shake/Shake.hs`]() is responsible for compiling the source with Clash and running the Icestorm flow.
+[`shake/Shake.hs`](https://github.com/standardsemiconductor/VELDT-blinker-clash/blob/master/shake/Shake.hs) is responsible for compiling the source with Clash and running the Icestorm flow.
 ## Info
 VELDT avaliable now on [Amazon](https://www.amazon.com/dp/B08F9T8DFT?ref=myi_title_dp)!
 
