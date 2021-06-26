@@ -12,6 +12,7 @@ VELDT blinker example with Clash
    ```console
    foo@bar:~$ git clone https://github.com/standardsemiconductor/VELDT-blinker-clash.git
    foo@bar:~$ cd VELDT-blinker-clash
+   foo@bar:~/VELDT-blinker-clash$ cabal build
    ```
 ## Usage
 Plug VELDT into computer USB port, make sure switches are set to ON and FLASH. Verify PWR LED illuminated red. To program the VELDT and run the blinker example:
