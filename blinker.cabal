@@ -14,7 +14,7 @@ library
         build-depends:
           base          >= 4.12 && < 4.17,
           Cabal,
-          clash-prelude >= 1.4  && < 1.5,
+          clash-prelude >= 1.4  && < 1.6,
           ice40-prim    >= 0.3  && < 0.4,
           mtl,
           ghc-typelits-natnormalise,
