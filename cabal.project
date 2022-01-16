@@ -13,8 +13,21 @@ package clash-prelude
 source-repository-package
     type: git
     location: https://github.com/clash-lang/clash-compiler.git
-    subdir: clash-prelude clash-ghc clash-lib
     tag: 3b763b262a5da1460b95b8bfce7c1f31db4b012f
+    subdir: clash-prelude
+
+
+source-repository-package
+    type: git
+    location: https://github.com/clash-lang/clash-compiler.git
+    tag: 3b763b262a5da1460b95b8bfce7c1f31db4b012f
+    subdir: clash-ghc
+
+source-repository-package
+    type: git
+    location: https://github.com/clash-lang/clash-compiler.git
+    tag: 3b763b262a5da1460b95b8bfce7c1f31db4b012f
+    subdir: clash-lib
 
 source-repository-package
     type: git
