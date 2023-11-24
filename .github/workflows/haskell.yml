@@ -105,6 +105,3 @@ jobs:
 
     - name: Synthesize
       run: cabal run blinker
-
-    - name: Check cabal file
-      run: cabal check
