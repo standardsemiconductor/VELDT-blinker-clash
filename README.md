@@ -31,10 +31,8 @@ Other commands:
 
 [`shake/Shake.hs`](https://github.com/standardsemiconductor/VELDT-blinker-clash/blob/master/shake/Shake.hs) is responsible for compiling the source with Clash and running the Icestorm flow.
 ## Info
-VELDT avaliable now on [Amazon](https://www.amazon.com/dp/B08F9T8DFT?ref=myi_title_dp)!
+VELDT avaliable now on [standardsemiconductor.com](https://www.standardsemiconductor.com)
 
 More information about the board can be found in the [VELDT-info](https://github.com/standardsemiconductor/VELDT-info#veldt-info) repo
-
-Visit the [website](https://www.standardsemiconductor.com/)
 
 Follow Standard Semiconductor on [LinkedIn](https://www.linkedin.com/company/standard-semiconductor/)
