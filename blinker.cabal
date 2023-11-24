@@ -1,7 +1,7 @@
 cabal-version:       2.4
 name:                blinker
 version:             0.1.0.0
-synopsis:	    VELDT Led Blinker
+synopsis:            VELDT Led Blinker
 license-file:        LICENSE
 author:              dopamane
 maintainer:          standard.semiconductor@gmail.com
