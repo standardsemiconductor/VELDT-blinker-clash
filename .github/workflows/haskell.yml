@@ -36,7 +36,7 @@ jobs:
     - name: Install icestorm
       working-directory: icestorm
       run: |
-        make
+        make -j$(nproc)
         sudo make install
 
     - name: Checkout nextpnr
@@ -51,7 +51,7 @@ jobs:
       working-directory: nextpnr
       run: |
         cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local .
-        make
+        make -j$(nproc)
         sudo make install
 
     - name: Checkout yosys
@@ -64,7 +64,7 @@ jobs:
     - name: Install yosys
       working-directory: yosys
       run: |
-        make
+        make -j$(nproc)
         sudo make install
 
     - name: Setup Haskell
