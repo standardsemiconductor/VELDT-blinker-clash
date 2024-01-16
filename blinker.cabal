@@ -12,9 +12,9 @@ library
         exposed-modules: Blinker
         default-language: Haskell2010
         build-depends:
-          base          >= 4.12 && < 4.17,
+          base          >= 4.12 && < 4.20,
           Cabal,
-          clash-prelude >= 1.4  && < 1.7,
+          clash-prelude >= 1.4  && < 1.9,
           ice40-prim    >= 0.3  && < 0.4,
           mtl,
           ghc-typelits-natnormalise,
